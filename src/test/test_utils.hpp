@@ -153,10 +153,10 @@ public:
     ConstructorEnabledModelManager() :
         ovms::ModelManager() {}
     ~ConstructorEnabledModelManager() {
+        join();
         spdlog::info("Destructor of modelmanager(Enabled one). Models #:{}", models.size());
         models.clear();
         spdlog::info("Destructor of modelmanager(Enabled one). Models #:{}", models.size());
-        join();
     }
 };
 class TestWithTempDir : public ::testing::Test {
